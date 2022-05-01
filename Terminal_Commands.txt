@@ -1,0 +1,46 @@
+1) Посмотреть где я - pwd
+2) Создать папку - mkdir
+3) Зайти в папку - cd
+4) Создать 3 папки - mkdir {app1,app2,app3}
+5) Зайти в любоую папку - cd app1
+6) Создать 5 файлов (3 txt, 2 json) - touch {1.txt,2.txt,3.txt,1.js,2.js}
+7) Создать 3 папки - mkdir {1,2,3}
+8. Вывести список содержимого папки - ls 
+9) + Открыть любой txt файл - wim
+10) + написать туда что-нибудь, любой текст - i
+11) + сохранить и выйти - esc + : + w + q
+12) Выйти из папки на уровень выше - cd ..
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку - mv app1/{2.txt,3.txt} app2
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку - cp app2/{2.txt,3.txt} app3
+15) Найти файл по имени - find . -name "1.txt"
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает. - grep - поиск по текстовым файлам. tail - отслеживание строк в реальном времени
+17) вывести несколько первых строк из текстового файла - cat 1.txt | sed -n 1,3p
+18) вывести несколько последних строк из текстового файла - tac 1.txt | sed -n 1,3p
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает. - less - просмотр больших файлов без возможности их редактирования.  Загружает текст фрагментами.
+20) вывести дату и время - date +%c
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+
+curl http://162.55.220.72:5005/terminal-hw-request
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   237  100   237    0     0   3189      0 --:--:-- --:--:-- --:--:--  3246{"Intro":"Hello!! This is your the first response from server","Tasks":{"Task_1":"Send the next URL in terminal: http://162.55.220.72:5005/get_method?name=(set_your_String)&age=(set_your_number)","result":["Your_String","Your_number"]}}
+
+curl http://162.55.220.72:5005/get_method?"name=Diana&age=29"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    15  100    15    0     0    177      0 --:--:-- --:--:-- --:--:--   182["Diana","29"]
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+
+#!/bin/bash
+cd homework
+mkdir {app1,app2,app3}
+cd app1
+touch {text1.txt,text2.txt,text3.txt,java1.js,java2.js}
+mkdir {papka1,papka2,papka3}
+ls
+mv {text2.txt,text3.txt} papka1
